@@ -10,4 +10,4 @@ First, install [Java SE Runtime environment](https://www.oracle.com/java/technol
 - Locate to the root folder of this program, then use the following command:
 `javac Discrete_Final`
 
-**! Note: Some parts of the GUI application have not finished yet. If you want to use full feature of this program, please choose the comand line method**
+**! Note: Some parts of the GUI application have not finished yet. If you want to use full feature of this program, please choose the command line method**
