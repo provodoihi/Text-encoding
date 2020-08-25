@@ -26,7 +26,7 @@ import javax.swing.filechooser.FileSystemView;
             this.left = left;
             this.right = right;
         }
-    };
+    }
 
     class Discrete_Final {
         // traverse the Huffman Tree and store Huffman Codes
@@ -62,7 +62,7 @@ import javax.swing.filechooser.FileSystemView;
         }
 
         // Builds Huffman Tree and huffmanCode and decode given input text
-        public static void buildHuffman(String text) throws IOException, InterruptedException {
+        public static void buildHuffman(String text) throws IOException {
             // count frequency of appearance of each character and store it in a map
             Map<Character, Integer> frequency = new HashMap<>();
             for (int i = 0; i < text.length(); i++) {
@@ -131,7 +131,8 @@ import javax.swing.filechooser.FileSystemView;
             public static void main(String[] args) throws Exception {
 
             // dialog show welcome
-            DialogShow2 ds2 = new DialogShow2();
+            DialogShow ds = new DialogShow();
+            ds.DialogShow();
 
             // GUI file chooser
             System.out.println("\nPlease choose the text file you want");
@@ -144,21 +145,21 @@ import javax.swing.filechooser.FileSystemView;
             if (returnValue == JFileChooser.APPROVE_OPTION) {
                 System.out.println("You choose this file: " + jfc.getSelectedFile().getPath());
                 // dialog message file encode here
-                DialogShow ds = new DialogShow();
+                ds.DialogShow2();
             }
             else {
                 System.out.println("You cancel to choose a text file");
                 // dialog show cancel choosing file + terminate program
-                DialogShow3 ds3 = new DialogShow3();
+                ds.DialogShow3();
                 System.exit(0);
             }
 
             // read content of text file
-            ReadText rd =new ReadText();
+            ReadText rd = new ReadText();
             String text = rd.ReadFile(jfc.getSelectedFile().getPath());
             buildHuffman(text);
             System.out.println("\nDecoding successfully from binary file to text file in "+jfc.getSelectedFile().getPath()+"\n");
-            DialogShow4 ds4 = new DialogShow4();
+            ds.DialogShow4();
             System.exit(0);
             }
     }
