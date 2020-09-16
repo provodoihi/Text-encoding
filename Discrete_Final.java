@@ -114,17 +114,6 @@ import javax.swing.filechooser.FileSystemView;
             //handle file writing
             File outFile = new File("DiscreteMath.bin");
             FileOutputStream outStream = new FileOutputStream(outFile);
-            System.out.println("\nEncoding successfully from text file to binary file: DiscreteMath.bin\n");
-            System.out.println("Decoding from binary file to text is in process\n");
-
-            // decode the encoded string to binary file
-            int index = -1;
-            System.out.println("Decoded text is: ");
-            while (index < strb.length() - 2) {
-                index = decode(root, index, strb);
-                outStream.write(index);
-            }
-            //output done, so close the stream
             outStream.close();
         }
 
@@ -158,7 +147,6 @@ import javax.swing.filechooser.FileSystemView;
             ReadText rd = new ReadText();
             String text = rd.ReadFile(jfc.getSelectedFile().getPath());
             buildHuffman(text);
-            System.out.println("\nDecoding successfully from binary file to text file in "+jfc.getSelectedFile().getPath()+"\n");
             ds.DialogShow4();
             System.exit(0);
             }
